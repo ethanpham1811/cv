@@ -5,16 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pham Nhat Khoi - CV</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
-      html {
-        font-size: 16px;
-        scroll-behavior: smooth;
-      }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,18 +36,37 @@
       }
     </script>
     <style type="text/tailwindcss">
+      :root {
+        --header-color: hsl(201, 12%, 76%);
+        --nav-color: hsl(0, 0%, 25%);
+        --ske-color: hsl(0, 0%, 91%);
+      }
+      @layer base {
+        html {
+          font-size: 16px;
+          scroll-behavior: smooth;
+        }
+      }
+      @layer utilities {
+        .avatar__clip {
+          clip-path: circle(40% at 50% 50%);
+        }
+        .avatar__clip--mb {
+          clip-path: circle(15% at 50% 50%);
+        }
+      }
       @layer components {
         .nav__btn {
           @apply relative text-black md:text-white bg-white md:bg-[#4c4e4d] hover:bg-[#4c4e4d] hover:text-white md:hover:bg-white md:hover:text-[#4c4e4d] transition-all flex items-center grow;
         }
         .nav__btn-icon {
-          @apply w-full p-[5px] 
+          @apply w-full p-[5px]
           before:opacity-0 before:translate-x-5 before:transition-all
           after:opacity-0 after:translate-x-5 after:transition-all
           hover:before:opacity-100 hover:before:translate-x-0
-          hover:after:opacity-100 hover:after:translate-x-0 after:shadow-[2px_1px_5px] 
-          before:absolute 
-          after:absolute 
+          hover:after:opacity-100 hover:after:translate-x-0 after:shadow-[2px_1px_5px]
+          before:absolute
+          after:absolute
           before:border-4 before:border-transparent before:border-r-white before:border-solid before:top-[calc(50%_-_5px)] before:left-[37px]
           after:lowercase after:font-body after:text-[12px] after:bg-white after:top-0 after:left-[45px] after:text-black after:px-5 after:py-2 after:rounded-sm after:whitespace-pre-wrap after:w-max
           max-md:before:hidden
@@ -61,26 +77,6 @@
         }
       }
     </style>
-    <script>
-      let isOn = false
-      function zoom(isZoomIn) {
-        const root = document.querySelector('html')
-        const curSize = window.getComputedStyle(root, null).getPropertyValue('font-size')
-        const sizeNum = parseFloat(curSize)
-
-        if (isZoomIn ? sizeNum > 21 : sizeNum < 10) return
-        root.style.fontSize = isZoomIn ? `${4 + sizeNum}px` : `${sizeNum - 2}px`
-      }
-      function switchMode() {
-        const root = document.querySelector('html')
-        const darkBtn = document.querySelector('#darkBtn')
-        isOn ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark')
-        isOn
-          ? darkBtn.classList.remove('md:bg-white', 'md:text-[#4c4e4d]', 'bg-[#4c4e4d]', 'text-white')
-          : darkBtn.classList.add('md:bg-white', 'md:text-[#4c4e4d]', 'bg-[#4c4e4d]', 'text-white')
-        isOn = !isOn
-      }
-    </script>
   </head>
   <body class="bg-[#4c4e4d] dark:bg-[#383737] font-body text-[16px]" id="top">
     <a href="#skill-list" class="sr-only focus:not-sr-only" tabindex="1">Skip to skill list</a>
@@ -111,38 +107,47 @@
       <div></div>
 
       <!-- Avatar -->
-      <section class="">
+      <section class="bg-[var(--header-color)]">
         <picture>
-          <source srcset="avt_sm.jpg" media="(min-width:768px)" />
-          <img src="avt_lg.jpg" alt="avatar" />
+          <source srcset="imgs/avt_sm.jpg" media="(min-width:768px)" />
+          <img data-id="avt" src="imgs/avt_lg.jpg" alt="avatar" class="hidden" onload="onAvtLoaded()" />
+          <div
+            data-id="avtSke"
+            class="bg-[url('imgs/skeleton.svg')] bg-[length:30%] md:bg-cover bg-no-repeat bg-center avatar__clip--mb md:avatar__clip min-h-[294px] animate-pulse"
+          ></div>
         </picture>
       </section>
 
       <!-- Name -->
-      <header class="flex flex-col justify-end p-8 pr-[50px] bg-[#bcc5ca] dark:bg-[#4c4e4d]">
+      <header data-id="name" class="flex flex-col justify-end p-8 pr-[50px] bg-[var(--header-color)] dark:bg-[#4c4e4d] hidden">
         <h1 class="text-4xl font-bold">KHOI PHAM NHAT</h1>
         <div class="font-medium text-2xl">Front-end developer</div>
         <div class="italic text-sm">DoB: <time datetime="1988-11-18">Nov 1988</time></div>
       </header>
+      <div data-id="nameSke" class="min-h-[294px] flex flex-col justify-end bg-[var(--header-color)] p-8">
+        <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-10 w-[50%] animate-pulse"></div>
+        <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-[30%] animate-pulse"></div>
+        <div class="bg-[var(--ske-color)] rounded-md h-5 w-[25%] animate-pulse"></div>
+      </div>
 
       <div class="row-span-3"></div>
 
       <!-- Contact -->
       <section
-        class="relative bg-[#404040] flex flex-col p-8 text-white after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 after:max-md:hidden"
+        class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 after:max-md:hidden"
         tabindex="1"
       >
         <ul class="flex flex-col justify-around flex-grow text-center font-semibold">
           <li class="break-words flex flex-col">
             <span
-              class="mb-1 material-symbols-outlined w-[25px] h-[25px] rounded-full flex bg-white self-center items-center justify-center text-[#404040] text-sm font-semibold"
+              class="mb-1 material-symbols-outlined w-[25px] h-[25px] rounded-full flex bg-white self-center items-center justify-center text-[var(--nav-color)] text-sm font-semibold"
             >
               mail </span
             ><a class="font-bold contact__link--slide mb-5" href="mailto:khoi.drca@gmail.com">khoi.drca@gmail.com</a>
           </li>
           <li class="break-words flex flex-col">
             <span
-              class="mb-1 material-symbols-outlined w-[25px] h-[25px] rounded-full flex bg-white self-center items-center justify-center text-[#404040] text-sm font-semibold"
+              class="mb-1 material-symbols-outlined w-[25px] h-[25px] rounded-full flex bg-white self-center items-center justify-center text-[var(--nav-color)] text-sm font-semibold"
             >
               location_on
             </span>
@@ -155,7 +160,7 @@
           </li>
           <li class="break-words flex flex-col">
             <span
-              class="mb-1 material-symbols-outlined w-[25px] h-[25px] rounded-full flex bg-white self-center items-center justify-center text-[#404040] text-sm font-semibold"
+              class="mb-1 material-symbols-outlined w-[25px] h-[25px] rounded-full flex bg-white self-center items-center justify-center text-[var(--nav-color)] text-sm font-semibold"
             >
               group_add
             </span>
@@ -169,7 +174,7 @@
         class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 after:border-black after:max-md:hidden"
         tabindex="1"
       >
-        <article class="flex-grow">
+        <article data-id="article" class="flex-grow hidden">
           <h3 class="text-[1.2rem] mb-2 uppercase font-bold">about</h3>
           <p>
             My name is Khoi, a passionate Asian guy who is looking out for a longterm, permanent job abroad. I've been in the industry for 8 years. As
@@ -178,10 +183,18 @@
             be delivering the most efficient solutions to turn the impossibles possible. Customer satisfaction is the glory that I seek.
           </p>
         </article>
+        <div data-id="articleSke" class="min-h-[250px] flex flex-col justify-end bg-white">
+          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-10 w-[20%] animate-pulse"></div>
+          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
+          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
+          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
+          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
+          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-[80%] animate-pulse"></div>
+        </div>
       </section>
 
       <!-- Skills -->
-      <section class="relative bg-[#404040] flex flex-col p-8 text-white row-span-2 scroll-smooth" tabindex="1" id="skill-list">
+      <section class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white row-span-2 scroll-smooth" tabindex="1" id="skill-list">
         <h3 class="text-[1.2rem] mb-2 uppercase font-bold">skills</h3>
         <div class="grid md:grid-cols-1 sm:grid-cols-5 grid-cols-3">
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
@@ -247,7 +260,7 @@
       </section>
 
       <!-- professional experience -->
-      <section class="flex flex-col p-8 pr-[50px] text-white md:text-black pb-10 bg-[#404040] md:bg-white dark:bg-[#4c4e4d] dark:text-white">
+      <section class="flex flex-col p-8 pr-[50px] text-white md:text-black pb-10 bg-[var(--nav-color)] md:bg-white dark:bg-[#4c4e4d] dark:text-white">
         <h3 class="text-[1.2rem] mb-2 uppercase font-bold">professional experience</h3>
         <!-- bstarsolution -->
         <article class="mb-10" tabindex="1">
@@ -329,5 +342,43 @@
         </article>
       </section>
     </main>
+    <!------------------------------------------------------------------SCRIPTs ------------------------------------------------>
+    <script>
+      /* fake loading */
+      const name = document.querySelector('[data-id="name"]')
+      const nameSke = document.querySelector('[data-id="nameSke"]')
+      setTimeout(() => {
+        name.classList.remove('hidden')
+        nameSke.classList.add('hidden')
+      }, 1500)
+
+      /* avat loaded */
+      function onAvtLoaded() {
+        const avt = document.querySelector('[data-id="avt"]')
+        const avtSke = document.querySelector('[data-id="avtSke"]')
+        avt.classList.remove('hidden')
+        avtSke.classList.add('hidden')
+      }
+
+      /* nav functions */
+      let isOn = false
+      function zoom(isZoomIn) {
+        const root = document.querySelector('html')
+        const curSize = window.getComputedStyle(root, null).getPropertyValue('font-size')
+        const sizeNum = parseFloat(curSize)
+
+        if (isZoomIn ? sizeNum > 21 : sizeNum < 10) return
+        root.style.fontSize = isZoomIn ? `${4 + sizeNum}px` : `${sizeNum - 2}px`
+      }
+      function switchMode() {
+        const root = document.querySelector('html')
+        const darkBtn = document.querySelector('#darkBtn')
+        isOn ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark')
+        isOn
+          ? darkBtn.classList.remove('md:bg-white', 'md:text-[#4c4e4d]', 'bg-[#4c4e4d]', 'text-white')
+          : darkBtn.classList.add('md:bg-white', 'md:text-[#4c4e4d]', 'bg-[#4c4e4d]', 'text-white')
+        isOn = !isOn
+      }
+    </script>
   </body>
 </html>
