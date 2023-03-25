@@ -38,9 +38,12 @@
     <style type="text/tailwindcss">
       :root {
         --header-color: hsl(201, 12%, 76%);
-        --nav-color: hsl(0, 0%, 25%);
         --ske-color: hsl(0, 0%, 91%);
         --link-color: hsl(219, 78%, 61%);
+        --nav-color: hsl(0, 0%, 25%);
+        --bg-dark-color: hsl(0, 1%, 22%);
+        --dark-color: hsl(150, 1%, 30%);
+        --bg-nav-color: hsl(0, 0%, 51%);
       }
       @layer base {
         html {
@@ -58,7 +61,7 @@
       }
       @layer components {
         .nav__btn {
-          @apply relative text-black md:text-white bg-white md:bg-[#4c4e4d] hover:bg-[#4c4e4d] hover:text-white md:hover:bg-white md:hover:text-[#4c4e4d] transition-all flex items-center grow;
+          @apply relative text-black md:text-white bg-white md:bg-[var(--dark-color)] hover:bg-[var(--dark-color)] hover:text-white md:hover:bg-white md:hover:text-[var(--dark-color)] transition-all flex items-center grow;
         }
         .nav__btn-icon {
           @apply w-full md:max-w-[34px] p-[5px]
@@ -79,13 +82,13 @@
       }
     </style>
   </head>
-  <body class="bg-[#4c4e4d] dark:bg-[#383737] font-body text-[16px]" id="top">
+  <body class="bg-[var(--dark-color)] dark:bg-[var(--bg-dark-color)] font-body text-[16px]" id="top">
     <a href="#skill-list" class="sr-only focus:not-sr-only" tabindex="1">Skip to skill list</a>
     <main
-      class="dark:bg-[#4c4e4d] dark:text-white relative text-base container xl:min-w-[1000px] xl:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[50px_300px_1fr] bg-white shadow-[0_0_1rem] shadow-black md:mt-10 md:mb-10"
+      class="dark:bg-[var(--dark-color)] dark:text-white relative text-base container xl:min-w-[1000px] xl:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[50px_300px_1fr] bg-white shadow-[0_0_1rem] shadow-black md:mt-10 md:mb-10"
     >
       <nav
-        class="sticky z-10 md:fixed top-0 md:top-[calc(50vh_-_100px)] left-[10px] md:rounded-[10px] flex md:flex-col md:shadow-[0_0_10px] bg-[#838383] text-[16px] leading-normal"
+        class="sticky z-10 md:fixed top-0 md:top-[calc(50vh_-_100px)] left-[10px] md:rounded-[10px] flex md:flex-col md:shadow-[0_0_10px] bg-[var(--bg-nav-color)] text-[16px] leading-normal"
       >
         <button class="nav__btn md:rounded-t-[10px] max-md:hidden">
           <span class="material-symbols-outlined nav__btn-icon after:content-['This_page_is_styled_using_TailwindCss']">info</span>
@@ -108,7 +111,7 @@
       <div></div>
 
       <!-- Avatar -->
-      <section class="flex items-center bg-[var(--header-color)] dark:bg-[#4c4e4d]">
+      <section class="flex items-center bg-[var(--header-color)]">
         <picture>
           <source srcset="imgs/avt_sm.jpg" media="(min-width:768px)" />
           <img data-id="avt" src="imgs/avt_lg.jpg" alt="Khoi's front face" class="hidden" onload="onAvtLoaded()" />
@@ -120,7 +123,7 @@
       </section>
 
       <!-- Name -->
-      <header data-id="name" class="flex flex-col justify-end p-8 pr-[50px] bg-[var(--header-color)] dark:bg-[#4c4e4d]">
+      <header data-id="name" class="flex flex-col justify-end p-8 pr-[50px] bg-[var(--header-color)] dark:bg-[var(--dark-color)]">
         <h1 class="text-4xl font-bold">KHOI PHAM NHAT</h1>
         <div class="font-medium text-2xl">Front-end developer</div>
         <div class="italic text-sm">DoB: <time datetime="1988-11-18">Nov 1988</time></div>
@@ -254,7 +257,9 @@
       </section>
 
       <!-- professional experience -->
-      <section class="flex flex-col p-8 pr-[50px] text-white md:text-black pb-10 bg-[var(--nav-color)] md:bg-white dark:bg-[#4c4e4d] dark:text-white">
+      <section
+        class="flex flex-col p-8 pr-[50px] text-white md:text-black pb-10 bg-[var(--nav-color)] md:bg-white dark:bg-[var(--dark-color)] dark:text-white"
+      >
         <h3 class="text-[1.2rem] mb-2 uppercase font-bold">professional experience</h3>
         <!-- bstarsolution -->
         <article class="mb-10" tabindex="1">
@@ -361,8 +366,8 @@
         const darkBtn = document.querySelector('#darkBtn')
         isOn ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark')
         isOn
-          ? darkBtn.classList.remove('md:bg-white', 'md:text-[#4c4e4d]', 'bg-[#4c4e4d]', 'text-white')
-          : darkBtn.classList.add('md:bg-white', 'md:text-[#4c4e4d]', 'bg-[#4c4e4d]', 'text-white')
+          ? darkBtn.classList.remove('md:bg-white', 'md:text-[var(--dark-color)]', 'bg-[var(--dark-color)]', 'text-white')
+          : darkBtn.classList.add('md:bg-white', 'md:text-[var(--dark-color)]', 'bg-[var(--dark-color)]', 'text-white')
         isOn = !isOn
       }
     </script>
