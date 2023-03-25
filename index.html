@@ -40,6 +40,7 @@
         --header-color: hsl(201, 12%, 76%);
         --nav-color: hsl(0, 0%, 25%);
         --ske-color: hsl(0, 0%, 91%);
+        --link-color: hsl(219, 78%, 61%);
       }
       @layer base {
         html {
@@ -60,7 +61,7 @@
           @apply relative text-black md:text-white bg-white md:bg-[#4c4e4d] hover:bg-[#4c4e4d] hover:text-white md:hover:bg-white md:hover:text-[#4c4e4d] transition-all flex items-center grow;
         }
         .nav__btn-icon {
-          @apply w-full p-[5px]
+          @apply w-full md:max-w-[34px] p-[5px]
           before:opacity-0 before:translate-x-5 before:transition-all
           after:opacity-0 after:translate-x-5 after:transition-all
           hover:before:opacity-100 hover:before:translate-x-0
@@ -68,12 +69,12 @@
           before:absolute
           after:absolute
           before:border-4 before:border-transparent before:border-r-white before:border-solid before:top-[calc(50%_-_5px)] before:left-[37px]
-          after:lowercase after:font-body after:text-[12px] after:bg-white after:top-0 after:left-[45px] after:text-black after:px-5 after:py-2 after:rounded-sm after:whitespace-pre-wrap after:w-max
+          after:lowercase after:font-body after:text-[12px] after:bg-white after:top-0 after:left-[45px] after:text-black after:px-[15px] after:py-[8px] after:rounded-sm after:whitespace-pre-wrap after:w-max
           max-md:before:hidden
           max-md:after:hidden;
         }
         .contact__link--slide {
-          @apply text-transparent bg-[linear-gradient(90deg,#6e91d1_50%,#fff_0)] bg-[right] hover:bg-[left] bg-clip-text transition-all duration-500 bg-[length:200%_100%];
+          @apply text-transparent bg-[linear-gradient(90deg,var(--header-color)_50%,#fff_0)] bg-[right] hover:bg-[left] bg-clip-text transition-all ease-out duration-200 bg-[length:200%_100%];
         }
       }
     </style>
@@ -81,13 +82,13 @@
   <body class="bg-[#4c4e4d] dark:bg-[#383737] font-body text-[16px]" id="top">
     <a href="#skill-list" class="sr-only focus:not-sr-only" tabindex="1">Skip to skill list</a>
     <main
-      class="dark:bg-[#4c4e4d] dark:text-white relative text-base container md:min-w-[1000px] xl:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[50px_300px_1fr] bg-white shadow-[0_0_1rem] shadow-black md:mt-10 md:mb-10"
+      class="dark:bg-[#4c4e4d] dark:text-white relative text-base container xl:min-w-[1000px] xl:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[50px_300px_1fr] bg-white shadow-[0_0_1rem] shadow-black md:mt-10 md:mb-10"
     >
       <nav
         class="sticky z-10 md:fixed top-0 md:top-[calc(50vh_-_100px)] left-[10px] md:rounded-[10px] flex md:flex-col md:shadow-[0_0_10px] bg-[#838383] text-[16px] leading-normal"
       >
-        <button class="nav__btn md:rounded-t-[10px]">
-          <span class="material-symbols-outlined nav__btn-icon after:content-['This_page_is_styled_by_TailwindCss_\A_my_name_is_Khoi']">info</span>
+        <button class="nav__btn md:rounded-t-[10px] max-md:hidden">
+          <span class="material-symbols-outlined nav__btn-icon after:content-['This_page_is_styled_using_TailwindCss']">info</span>
         </button>
         <button class="nav__btn">
           <span class="material-symbols-outlined nav__btn-icon after:content-['Increase_font_size']" onclick="zoom(true)">zoom_in</span>
@@ -96,10 +97,10 @@
           <span class="material-symbols-outlined nav__btn-icon after:content-['Decrease_font_size']" onclick="zoom(false)">zoom_out</span>
         </button>
         <button class="nav__btn" id="darkBtn">
-          <span class="material-symbols-outlined nav__btn-icon after:content-['Dark_mode_switcher']" onclick="switchMode()">dark_mode</span>
+          <span class="material-symbols-outlined nav__btn-icon after:content-['Dark_mode']" onclick="switchMode()">dark_mode</span>
         </button>
         <button class="nav__btn md:rounded-b-[10px]">
-          <span class="material-symbols-outlined nav__btn-icon after:content-['Scroll_to_top']"
+          <span class="material-symbols-outlined nav__btn-icon after:content-['Scroll_top']"
             ><a href="#top" class="w-full block">arrow_upward</a></span
           >
         </button>
@@ -107,10 +108,10 @@
       <div></div>
 
       <!-- Avatar -->
-      <section class="bg-[var(--header-color)]">
+      <section class="flex items-center bg-[var(--header-color)] dark:bg-[#4c4e4d]">
         <picture>
           <source srcset="imgs/avt_sm.jpg" media="(min-width:768px)" />
-          <img data-id="avt" src="imgs/avt_lg.jpg" alt="avatar" class="hidden" onload="onAvtLoaded()" />
+          <img data-id="avt" src="imgs/avt_lg.jpg" alt="Khoi's front face" class="hidden" onload="onAvtLoaded()" />
           <div
             data-id="avtSke"
             class="bg-[url('imgs/skeleton.svg')] bg-[length:30%] md:bg-cover bg-no-repeat bg-center avatar__clip--mb md:avatar__clip min-h-[294px] animate-pulse"
@@ -119,16 +120,16 @@
       </section>
 
       <!-- Name -->
-      <header data-id="name" class="flex flex-col justify-end p-8 pr-[50px] bg-[var(--header-color)] dark:bg-[#4c4e4d] hidden">
+      <header data-id="name" class="flex flex-col justify-end p-8 pr-[50px] bg-[var(--header-color)] dark:bg-[#4c4e4d]">
         <h1 class="text-4xl font-bold">KHOI PHAM NHAT</h1>
         <div class="font-medium text-2xl">Front-end developer</div>
         <div class="italic text-sm">DoB: <time datetime="1988-11-18">Nov 1988</time></div>
       </header>
-      <div data-id="nameSke" class="min-h-[294px] flex flex-col justify-end bg-[var(--header-color)] p-8">
+      <!-- <div data-id="nameSke" class="min-h-[294px] flex flex-col justify-end bg-[var(--header-color)] p-8">
         <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-10 w-[50%] animate-pulse"></div>
         <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-[30%] animate-pulse"></div>
         <div class="bg-[var(--ske-color)] rounded-md h-5 w-[25%] animate-pulse"></div>
-      </div>
+      </div> -->
 
       <div class="row-span-3"></div>
 
@@ -164,48 +165,41 @@
             >
               group_add
             </span>
-            <a class="font-bold contact__link--slide" href="https://www.linkedin.com/in/taramija">https://www.linkedin.com/in/taramija</a>
+            <a class="font-bold contact__link--slide" href="https://www.linkedin.com/in/taramija">linkedin.com/taramija</a>
           </li>
         </ul>
       </section>
 
       <!-- About -->
       <section
-        class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 after:border-black after:max-md:hidden"
+        class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
         tabindex="1"
       >
-        <article data-id="article" class="flex-grow hidden">
+        <article data-id="article" class="flex-grow">
           <h3 class="text-[1.2rem] mb-2 uppercase font-bold">about</h3>
           <p>
-            My name is Khoi, a passionate Asian guy who is looking out for a longterm, permanent job abroad. I've been in the industry for 8 years. As
-            a senior, I'm confident being self-taught, solving problem by my own as well as achieving the same thing with a team. I offer you my
-            diligent endurable spirit, my passion in learning and my commitment to get your business successful. With an "I can do it" mindset, I'll
-            be delivering the most efficient solutions to turn the impossibles possible. Customer satisfaction is the glory that I seek.
+            My name is Khoi, a passionate Asian guy who is looking out for a longterm, permanent job abroad. I've been in the industry for 8 years as
+            a professional front-end developer. As a senior, I'm confident being self-taught, solving problem by my own as well as achieving the same
+            thing with a team. I offer you my diligent endurable spirit, my passion for learning and my commitment to get your business successful.
+            With an "I can do it" mindset, I'll be delivering the most efficient solutions to make the impossibles possible. Customer satisfaction is
+            the glory that I seek.
           </p>
         </article>
-        <div data-id="articleSke" class="min-h-[250px] flex flex-col justify-end bg-white">
-          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-10 w-[20%] animate-pulse"></div>
-          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
-          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
-          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
-          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-full animate-pulse"></div>
-          <div class="bg-[var(--ske-color)] rounded-lg mb-2 h-7 w-[80%] animate-pulse"></div>
-        </div>
       </section>
 
       <!-- Skills -->
       <section class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white row-span-2 scroll-smooth" tabindex="1" id="skill-list">
         <h3 class="text-[1.2rem] mb-2 uppercase font-bold">skills</h3>
-        <div class="grid md:grid-cols-1 sm:grid-cols-5 grid-cols-3">
+        <div class="grid md:grid-cols-1 sm:grid-cols-5 grid-cols-2">
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="font-bold">Cores</li>
+            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Cores</li>
             <li>Javascript</li>
             <li>ReactJs</li>
             <li>Angular</li>
             <li>ES6</li>
           </ul>
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="font-bold">Tech & Libs</li>
+            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Tech & Libs</li>
             <li>Typescript</li>
             <li>NextJs</li>
             <li>Universal</li>
@@ -216,20 +210,20 @@
             <li>GraphQl</li>
           </ul>
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="font-bold">Testing libs</li>
+            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Testing libs</li>
             <li>Testing library</li>
             <li>Jest</li>
             <li>Cypress</li>
           </ul>
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="font-bold">Dev tools</li>
+            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Dev tools</li>
             <li>Gulp, Webpack</li>
             <li>Yarn</li>
             <li>Git</li>
             <li>Docker</li>
           </ul>
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="font-bold">Management tools</li>
+            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Management tools</li>
             <li>Agile, Scrum</li>
             <li>Figma</li>
             <li>Slack</li>
@@ -241,7 +235,7 @@
 
       <!-- Education -->
       <section
-        class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 after:border-black after:max-md:hidden"
+        class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
         tabindex="1"
       >
         <article class="flex-grow">
@@ -271,8 +265,8 @@
           <ul class="pl-8 mb-[10px] list-[circle]">
             <li>
               Participated in a big project name Auvenir, one pure web based application of the giant Deloitte, an international company who is an
-              expert in providing audit, assurance and consulting in financial field. Throughout 4 years, my team of 20 members was responsible for
-              developing over 30 features for a complex ReactJs based project.
+              expert in providing audit, assurance and consultation in financial field. Throughout 4 years, my team of 20 members were responsible for
+              development of over 30 features for a giant-class ReactJs project.
             </li>
             <li>Entire development lifecycle with Agile, full CI/DI process on Azure platform.</li>
             <li>
@@ -282,7 +276,7 @@
             <li>Gave presentation on requirements and risks analysis prior to every sprint.</li>
             <li>Technical discussion and whiteboarding to address problem.</li>
             <li>
-              Beside Auvernir, I was responsible for code reviewing, evaluating merge requests in a team of 4 taken care of several other projects.
+              Beside Auvernir, I was responsible for code reviewing, merge requests evaluation in a team of 4 taken care of several other projects.
             </li>
             <li>4 months working with GraphQL.</li>
           </ul>
@@ -313,10 +307,10 @@
           </ul>
           <h5 class="font-bold">Prominent Projects:</h5>
           <ul class="list-disc pl-8 mb-[10px]">
-            <li>Proximity: Angular location tracker app, GG map Apis integrated. A management app for French bicycle tournament.</li>
+            <li>Proximity: An Angular based management app for French bicycle tournament with location tracking using GG map Apis.</li>
             <li>
               Internal conference web app: ReactJs based video conference Zoom-like app, a two men project with screen sharing, file transferring,
-              voice & video call, in app chat integrated.
+              voice, video call and in-app chat.
             </li>
           </ul>
         </article>
@@ -328,9 +322,9 @@
           - Ho Chi Minh, Vietnam
           <h4 class="font-semibold text-xl mb-2">Front-end Developer</h4>
           <ul class="pl-8 mb-[10px] list-[circle]">
+            <li>Worked with western-cultured working environment in a French company with strict quality evaluation process.</li>
             <li>Developed hybrid presentation apps for international hospitals around the world, used by qualified doctors.</li>
-            <li>Western cultured working environment in a French company with strict quality evaluation process.</li>
-            <li>Worked with JS, Jquery, Canvas, ThreeJS and Flash to create effects/animations that run on mobile devices (web app).</li>
+            <li>Used JS, Jquery, Canvas, ThreeJS and Flash to create effects/animations that run on mobile devices (web app).</li>
           </ul>
           <h5 class="font-bold">Prominent Projects:</h5>
           <ul class="list-disc pl-8 mb-[10px]">
@@ -344,14 +338,6 @@
     </main>
     <!------------------------------------------------------------------SCRIPTs ------------------------------------------------>
     <script>
-      /* fake loading */
-      const name = document.querySelector('[data-id="name"]')
-      const nameSke = document.querySelector('[data-id="nameSke"]')
-      setTimeout(() => {
-        name.classList.remove('hidden')
-        nameSke.classList.add('hidden')
-      }, 1500)
-
       /* avat loaded */
       function onAvtLoaded() {
         const avt = document.querySelector('[data-id="avt"]')
