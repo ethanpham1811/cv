@@ -111,15 +111,15 @@
       <div></div>
 
       <!-- Avatar -->
-      <section class="flex items-center bg-[var(--header-color)]">
+      <section class="flex items-center bg-[var(--header-color)] dark:bg-[var(--dark-color)]">
         <picture>
           <source srcset="imgs/avt_sm.jpg" media="(min-width:768px)" />
           <img data-id="avt" src="imgs/avt_lg.jpg" alt="Khoi's front face" class="hidden" onload="onAvtLoaded()" />
-          <div
-            data-id="avtSke"
-            class="bg-[url('imgs/skeleton.svg')] bg-[length:30%] md:bg-cover bg-no-repeat bg-center avatar__clip--mb md:avatar__clip min-h-[294px] animate-pulse"
-          ></div>
         </picture>
+        <div
+          data-id="avtSke"
+          class="w-full bg-[url('imgs/skeleton.svg')] bg-[length:30%] md:bg-cover bg-no-repeat bg-center avatar__clip--mb md:avatar__clip min-h-[294px] animate-pulse"
+        ></div>
       </section>
 
       <!-- Name -->
