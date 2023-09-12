@@ -108,7 +108,7 @@
           >
         </button>
       </nav>
-      <div></div>
+      <div class="bg-[var(--header-color)] dark:bg-[var(--dark-color)]"></div>
 
       <!-- Avatar -->
       <section class="flex items-center bg-[var(--header-color)] dark:bg-[var(--dark-color)]">
@@ -193,18 +193,27 @@
       <section class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white row-span-3 scroll-smooth" tabindex="1" id="skill-list">
         <h3 class="text-[1.2rem] mb-2 uppercase font-bold">skills</h3>
         <div class="grid md:grid-cols-1 sm:grid-cols-5 grid-cols-2">
-          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Cores</li>
+          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5 items-end">
+            <li
+              class="max-md:bg-[var(--header-color)] max-md:text-[var(--nav-color)] break-words font-bold px-2 bg-[var(--header-color)] text-black max-w-max"
+            >
+              Cores
+            </li>
             <li>Javascript</li>
             <li>ReactJs</li>
             <li>Angular</li>
             <li>ES6</li>
           </ul>
-          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Tech & Libs</li>
+          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5 items-end">
+            <li
+              class="max-md:bg-[var(--header-color)] max-md:text-[var(--nav-color)] break-words font-bold px-2 bg-[var(--header-color)] text-black max-w-max"
+            >
+              Tech & Libs
+            </li>
             <li>Typescript</li>
             <li>NextJs</li>
             <li>Universal</li>
+            <li>GraphQl</li>
             <li>React Query</li>
             <li>Redux</li>
             <li>Rxjs</li>
@@ -212,16 +221,25 @@
             <li>MUI</li>
             <li>Bootstarp</li>
           </ul>
-          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Testing libs</li>
+          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5 items-end">
+            <li
+              class="max-md:bg-[var(--header-color)] max-md:text-[var(--nav-color)] break-words font-bold px-2 bg-[var(--header-color)] text-black max-w-max"
+            >
+              Testing libs
+            </li>
             <li>Testing library</li>
             <li>Jest</li>
             <li>Cypress</li>
           </ul>
-          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5">
-            <li class="max-md:bg-[var(--header-color)] text-white max-md:text-[var(--nav-color)] break-words font-bold">Dev tools</li>
+          <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5 items-end">
+            <li
+              class="max-md:bg-[var(--header-color)] max-md:text-[var(--nav-color)] break-words font-bold px-2 bg-[var(--header-color)] text-black max-w-max"
+            >
+              Dev tools
+            </li>
             <li>Gulp, Webpack</li>
-            <li>Yarn</li>
+            <li>Yarn/Npm</li>
+            <li>Eslint</li>
             <li>Git</li>
             <li>Docker</li>
           </ul>
@@ -287,13 +305,12 @@
           <h4 class="font-semibold text-xl mb-2">Senior Front-end Developer</h4>
           <ul class="pl-8 mb-[10px] list-[circle]">
             <li>
-              Participated in a big project name Auvenir, one pure web based application of the giant <span class="font-bold">Deloitte</span>, an
-              international company who is an expert in providing audit, assurance and consultation in financial field. Throughout 4 years, my team of
-              20 members were responsible for the development of over 30 features for a giant-class ReactJs project.
+              Participated in a big project name Auvenir of the giant <span class="font-bold">Deloitte</span>, were responsible for the development of
+              over 30 features of this huge ReactJs based project.
             </li>
-            <li>Entire development lifecycle with Agile, full CI/DI process on Azure platform.</li>
+            <li>Entire development lifecycle with Agile, full CI/DI work flow on Azure platform.</li>
             <li>
-              Delivered well tested and maintainable features with 75% of coverage. Strictly monitored and consulted by professionals and seniors from
+              Delivered well tested and maintainable features with 75% of coverage. Strictly monitored and directed by professionals and seniors from
               the customer dev team.
             </li>
             <li>Gave presentation on requirements and risks analysis prior to every sprint.</li>
@@ -301,11 +318,10 @@
             <li>
               Beside Auvenir, I was responsible for code reviewing, merge requests evaluation in a team of 4 taken care of several other projects.
             </li>
-            <li>4 months working with GraphQL.</li>
           </ul>
           <h5 class="font-bold">Prominent Projects:</h5>
           <ul class="list-disc pl-8 mb-[10px]">
-            <li>Auvenir: A cloud service web app provide solutions on management of business engagements between companies and their clients.</li>
+            <li>Auvenir: A service web app provide solutions on management of business engagements between companies and their clients.</li>
             <li>Penguin: An Angular based internal project from Boston Scientific about warehouse management of medical assets and bundles.</li>
           </ul>
         </article>
@@ -333,7 +349,7 @@
             <li>Proximity: An Angular based management app for French bicycle tournament with location tracking using GG map Apis.</li>
             <li>
               Internal conference web app: ReactJs based video conference Zoom-like app, a two men project with screen sharing, file transferring,
-              voice, video call and in-app chat.
+              voice, video call and in-app chat with WebRTC.
             </li>
           </ul>
         </article>
@@ -365,9 +381,9 @@
           <h3 class="text-[1.2rem] mb-2 uppercase font-bold">final words</h3>
           <p class="mb-3">
             Even though I'm an introvert, I have a strong desire to connect with people, to be listened, to prove myself; this is the reason why I'm
-            looking for mid-size to corporate company. Being in a community is part of my career, I'm a team player who would never work alone.
+            looking for mid-size to corporate company. Being in a community is part of my career.
           </p>
-          <p>Disclosure: I'm also a gamer and a metalhead.</p>
+          <p>I'm also a gamer and a metalhead.</p>
         </article>
       </section>
     </main>
@@ -388,8 +404,8 @@
         const curSize = window.getComputedStyle(root, null).getPropertyValue('font-size')
         const sizeNum = parseFloat(curSize)
 
-        if (isZoomIn ? sizeNum > 21 : sizeNum < 10) return
-        root.style.fontSize = isZoomIn ? `${4 + sizeNum}px` : `${sizeNum - 2}px`
+        if (isZoomIn ? sizeNum >= 22 : sizeNum <= 10) return
+        root.style.fontSize = isZoomIn ? `${2 + sizeNum}px` : `${sizeNum - 2}px`
       }
       function switchMode() {
         const root = document.querySelector('html')
