@@ -39,7 +39,7 @@
       :root {
         --header-color: hsl(201, 12%, 76%);
         --ske-color: hsl(0, 0%, 91%);
-        --link-color: hsl(219, 78%, 61%);
+        --link-color: hsl(219, 100%, 50%);
         --nav-color: hsl(0, 0%, 25%);
         --bg-dark-color: hsl(0, 1%, 22%);
         --dark-color: hsl(150, 1%, 30%);
@@ -133,7 +133,7 @@
         <div class="bg-[var(--ske-color)] rounded-md h-5 w-[25%] animate-pulse"></div>
       </div> -->
 
-      <div class="row-span-4"></div>
+      <div class="row-span-5"></div>
 
       <!-- Contact -->
       <section
@@ -186,11 +186,14 @@
             With an "I can do it" mindset, I'll be delivering the most efficient solutions to make the impossibles possible. Customer satisfaction is
             the glory that I seek.
           </p>
+          <p class="mt-2">
+            My porfolio: <a class="text-[var(--link-color)]" href="https://ethan-porfolio-fe.vercel.app/">https://ethan-porfolio-fe.vercel.app/</a>
+          </p>
         </article>
       </section>
 
       <!-- Skills -->
-      <section class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white row-span-3 scroll-smooth" tabindex="1" id="skill-list">
+      <section class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white row-span-4 scroll-smooth" tabindex="1" id="skill-list">
         <h3 class="text-[1.2rem] mb-2 uppercase font-bold">skills</h3>
         <div class="grid md:grid-cols-1 sm:grid-cols-5 grid-cols-2">
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5 items-end">
@@ -294,7 +297,7 @@
 
       <!-- professional experience -->
       <section
-        class="relative lex flex-col p-8 pr-[50px] text-white md:text-black bg-[var(--nav-color)] md:bg-white dark:bg-[var(--dark-color)] dark:text-white after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
+        class="relative flex flex-col p-8 pr-[50px] text-white md:text-black bg-[var(--nav-color)] md:bg-white dark:bg-[var(--dark-color)] dark:text-white after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
       >
         <h3 class="text-[1.2rem] mb-2 uppercase font-bold">professional experience</h3>
         <!-- bstarsolution -->
@@ -376,7 +379,10 @@
       </section>
 
       <!-- Interests & facts -->
-      <section class="dark:text-white relative flex flex-col p-8 pb-20 pr-[50px] text-black" tabindex="1">
+      <section
+        class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
+        tabindex="1"
+      >
         <article data-id="article" class="flex-grow">
           <h3 class="text-[1.2rem] mb-2 uppercase font-bold">final words</h3>
           <p class="mb-3">
@@ -384,6 +390,16 @@
             looking for mid-size to corporate company. Being in a community is part of my career.
           </p>
           <p>I'm also a gamer and a metalhead.</p>
+        </article>
+      </section>
+
+      <!-- Reminder -->
+      <section
+        class="relative lex flex-col p-8 pr-[50px] text-white md:text-black bg-[var(--nav-color)] md:bg-white dark:bg-[var(--dark-color)] dark:text-white"
+      >
+        <article data-id="article" class="flex-grow">
+          <p>Finally, don't forget to check out my porfolio</p>
+          <a class="text-[var(--link-color)]" href="https://ethan-porfolio-fe.vercel.app/">https://ethan-porfolio-fe.vercel.app/</a>
         </article>
       </section>
     </main>
