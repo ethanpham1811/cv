@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ethan Resume" />
     <title>Pham Nhat Khoi - CV</title>
     <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico" />
     <link
@@ -83,7 +84,7 @@
     </style>
   </head>
   <body class="bg-[var(--dark-color)] dark:bg-[var(--bg-dark-color)] font-body text-[16px]" id="top">
-    <a href="#skill-list" class="sr-only focus:not-sr-only" tabindex="1">Skip to skill list</a>
+    <a href="#skill-list" class="sr-only focus:not-sr-only" tabindex="0">Skip to skill list</a>
     <main
       class="dark:bg-[var(--dark-color)] dark:text-white relative text-base container xl:min-w-[1000px] xl:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[50px_300px_1fr] bg-white shadow-[0_0_1rem] shadow-black md:mt-10 md:mb-10"
     >
@@ -133,12 +134,13 @@
         <div class="bg-[var(--ske-color)] rounded-md h-5 w-[25%] animate-pulse"></div>
       </div> -->
 
-      <div class="row-span-4"></div>
+      <!-- Important: Update this upon adding new item to right column -->
+      <div class="row-span-5"></div>
 
       <!-- Contact -->
       <section
         class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 after:max-md:hidden"
-        tabindex="1"
+        tabindex="0"
       >
         <ul class="flex flex-col justify-around flex-grow text-center font-semibold">
           <li class="break-words flex flex-col">
@@ -175,10 +177,10 @@
       <!-- About -->
       <section
         class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
-        tabindex="1"
+        tabindex="0"
       >
         <article data-id="article" class="flex-grow">
-          <h3 class="text-[1.2rem] mb-2 uppercase font-bold">about</h3>
+          <h1 class="text-[1.2rem] mb-2 uppercase font-bold">about</h1>
           <p>
             My name is Khoi, a passionate Asian guy who is looking out for a longterm, permanent job abroad. I've been in the industry for 8 years as
             a professional front-end developer. As a senior, I'm confident being self-taught, solving problem by my own as well as achieving the same
@@ -190,8 +192,9 @@
       </section>
 
       <!-- Skills -->
-      <section class="relative bg-[var(--nav-color)] flex flex-col p-8 text-white row-span-3 scroll-smooth" tabindex="1" id="skill-list">
-        <h3 class="text-[1.2rem] mb-2 uppercase font-bold">skills</h3>
+      <!-- Important: Update "row-span-x" upon adding new item to right column -->
+      <section class="row-span-4 relative bg-[var(--nav-color)] flex flex-col p-8 text-white scroll-smooth" tabindex="0" id="skill-list">
+        <h1 class="text-[1.2rem] mb-2 uppercase font-bold">skills</h1>
         <div class="grid md:grid-cols-1 sm:grid-cols-5 grid-cols-2">
           <ul class="flex flex-col mr-1 md:mr-0 md:text-right mb-5 items-end">
             <li
@@ -275,18 +278,18 @@
       <!-- Education -->
       <section
         class="dark:text-white relative flex flex-col p-8 pr-[50px] text-black after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
-        tabindex="1"
+        tabindex="0"
       >
         <article class="flex-grow">
-          <h3 class="text-[1.2rem] mb-2 uppercase font-bold">education</h3>
+          <h1 class="text-[1.2rem] mb-2 uppercase font-bold">education</h1>
           <section class="mb-5">
             <div class="italic"><time datetime="2016-08">August 2016</time> - <time datetime="2017-08">August 2017</time></div>
-            <h5 class="font-bold">Bachelor of Science: Robotic Engineering</h5>
+            <h2 class="font-bold">Bachelor of Science: Robotic Engineering</h2>
             <div>Université de Bourgogne, Le Creusot, France</div>
           </section>
           <section>
             <div class="italic"><time datetime="2008-04">April 2008</time> - <time datetime="2011-09">September 2011</time></div>
-            <h5 class="font-bold">Associate of Science: Computer Programming</h5>
+            <h2 class="font-bold">Associate of Science: Computer Programming</h2>
             <div>SaigonTech - HCC Houston Community College, Vietnam</div>
           </section>
         </article>
@@ -296,13 +299,12 @@
       <section
         class="relative lex flex-col p-8 pr-[50px] text-white md:text-black bg-[var(--nav-color)] md:bg-white dark:bg-[var(--dark-color)] dark:text-white after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
       >
-        <h3 class="text-[1.2rem] mb-2 uppercase font-bold">professional experience</h3>
+        <h1 class="text-[1.2rem] mb-2 uppercase font-bold">professional experience</h1>
         <!-- bstarsolution -->
-        <article class="mb-10" tabindex="1">
+        <article class="mb-10" tabindex="0">
           <div class="italic"><time datetime="2008-02">February 2018</time> - <time datetime="2022-07">July 2022</time></div>
-          <h5 class="font-bold float-left">BstarSolution</h5>
-          - Ho Chi Minh, Vietnam
-          <h4 class="font-semibold text-xl mb-2">Senior Front-end Developer</h4>
+          <h2 class="font-semibold text-xl mb-2">Senior Front-end Developer</h2>
+          <h3 class="font-bold mb-2">BstarSolution - <span class="font-normal">Ho Chi Minh, Vietnam</span></h3>
           <ul class="pl-8 mb-[10px] list-[circle]">
             <li>
               Participated in a big project name Auvenir of the giant <span class="font-bold">Deloitte</span>, were responsible for the development of
@@ -319,7 +321,7 @@
               Beside Auvenir, I was responsible for code reviewing, merge requests evaluation in a team of 4 taken care of several other projects.
             </li>
           </ul>
-          <h5 class="font-bold">Prominent Projects:</h5>
+          <h3 class="font-bold">Prominent Projects:</h3>
           <ul class="list-disc pl-8 mb-[10px]">
             <li>Auvenir: A service web app provide solutions on management of business engagements between companies and their clients.</li>
             <li>Penguin: An Angular based internal project from Boston Scientific about warehouse management of medical assets and bundles.</li>
@@ -327,11 +329,10 @@
         </article>
 
         <!-- Officience -->
-        <article class="mb-10" tabindex="1">
+        <article class="mb-10" tabindex="0">
           <div class="italic"><time datetime="2013-11">November 2013</time> - <time datetime="2016-04">April 2016</time></div>
-          <h5 class="font-bold float-left">Officience</h5>
-          - Ho Chi Minh, Vietnam
-          <h4 class="font-semibold text-xl mb-2">Front-end Developer</h4>
+          <h2 class="font-semibold text-xl mb-2">Front-end Developer</h2>
+          <h3 class="font-bold mb-2">Officience - <span class="font-normal">Ho Chi Minh, Vietnam</span></h3>
           <ul class="pl-8 mb-[10px] list-[circle]">
             <li>Outsourcing French company, western-cultured working environment, development lifecycle with Agile.</li>
             <li>
@@ -344,7 +345,7 @@
             <li>Worked directly with product owners and design team to collect requirements and feedbacks during the sprint.</li>
             <li>Became a trainer and a mentor for juniors.</li>
           </ul>
-          <h5 class="font-bold">Prominent Projects:</h5>
+          <h3 class="font-bold">Prominent Projects:</h3>
           <ul class="list-disc pl-8 mb-[10px]">
             <li>Proximity: An Angular based management app for French bicycle tournament with location tracking using GG map Apis.</li>
             <li>
@@ -355,17 +356,16 @@
         </article>
 
         <!-- DrCom Asia -->
-        <article tabindex="1">
+        <article tabindex="0">
           <div class="italic"><time datetime="2011-09">September 2011</time> - <time datetime="2012-11">November 2012</time></div>
-          <h5 class="font-bold float-left">DrCom Asia</h5>
-          - Ho Chi Minh, Vietnam
-          <h4 class="font-semibold text-xl mb-2">Front-end Developer</h4>
+          <h2 class="font-semibold text-xl mb-2">Front-end Developer</h2>
+          <h3 class="font-bold mb-2">DrCom Asia - <span class="font-normal">Ho Chi Minh, Vietnam</span></h3>
           <ul class="pl-8 mb-[10px] list-[circle]">
             <li>Worked with western-cultured working environment in a French company with strict quality evaluation process.</li>
             <li>Developed hybrid presentation apps for international hospitals around the world, used by qualified doctors.</li>
             <li>Used JS, Jquery, Canvas, ThreeJS and Flash to create effects/animations that run on mobile devices (web app).</li>
           </ul>
-          <h5 class="font-bold">Prominent Projects:</h5>
+          <h3 class="font-bold">Prominent Projects:</h3>
           <ul class="list-disc pl-8 mb-[10px]">
             <li>
               DrCom presentation apps: Html and JS based hybrid app run on tablets (mostly Ipad). Highly interactive web pages, fully populated by
@@ -375,15 +375,38 @@
         </article>
       </section>
 
-      <!-- Interests & facts -->
-      <section class="dark:text-white relative flex flex-col p-8 pb-20 pr-[50px] text-black" tabindex="1">
+      <!-- Character traits -->
+      <section
+        class="relative flex flex-col p-8 pr-[50px] text-black md:bg-white dark:md:bg-[var(--dark-color)] dark:bg-[var(--nav-color)] dark:text-white after:absolute after:border-t-[1px] after:w-[calc(100%_-_2rem_-_50px)] after:bottom-0 dark:after:border-white after:border-black after:max-md:hidden"
+        tabindex="0"
+      >
         <article data-id="article" class="flex-grow">
-          <h3 class="text-[1.2rem] mb-2 uppercase font-bold">final words</h3>
+          <h1 class="text-[1.2rem] mb-2 uppercase font-bold">Character traits</h1>
           <p class="mb-3">
-            Even though I'm an introvert, I have a strong desire to connect with people, to be listened, to prove myself; this is the reason why I'm
-            looking for mid-size to corporate company. Being in a community is part of my career.
+            I'm a committed and hardworking person who loves tackling challenges head-on. I find real joy in overcoming obstacles. I'm all about doing
+            things right, not just getting them done. It bugs me if I can't wrap up a task before calling it a day, and even the smallest details,
+            like a 1px misalignment, can bother me.
           </p>
-          <p>I'm also a gamer and a metalhead.</p>
+          <p class="mb-3">
+            I have a strong desire to connect with people, to be listened, to prove myself; this is the reason why I'm looking for mid-size to
+            corporate company. Being in a community is part of my career.
+          </p>
+        </article>
+      </section>
+
+      <!-- Interests & facts -->
+      <section
+        class="relative flex flex-col p-8 pb-20 pr-[50px] text-white md:text-black bg-[var(--nav-color)] md:bg-white dark:bg-[var(--dark-color)] dark:text-white"
+        tabindex="0"
+      >
+        <article data-id="article" class="flex-grow">
+          <h1 class="text-[1.2rem] mb-2 uppercase font-bold">final words</h1>
+          <p class="mb-3">
+            If you're seeking an employee who will wholeheartedly dedicate himself to the success of your business—not just someone who follows
+            instructions—I'm the right person for the job. Additionally, I could be more than just a colleague; I'm the kind of person who will sit
+            back, listen to every one of your stories, and be a friend as well.
+          </p>
+          <p>p/s: I'm also a gamer and a metalhead.</p>
         </article>
       </section>
     </main>
